@@ -1,3 +1,54 @@
+*{
+    font-family: 'Times New Roman', Times, serif;
+}
 .logo{
     height:80px;
+}
+.navbar{
+    padding: 20px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar-menu{
+    display:flex;
+    list-style: none;
+    gap:20px;
+    color:#49557e;
+    font-size: 18px;
+    cursor: pointer;
+}
+.navbar-right{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.navbar button{
+    background: transparent;
+    font-size: 16px;
+    color: #49557e;
+    border:1px solid rgb(217, 172, 57);
+    padding: 10px 30px;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: .3s;
+}
+.navbar button:hover{
+    background-color: #f6f3cc;
+}
+.navbar .active{
+    padding-bottom: 2px;
+    border-bottom: 2px solid #49557e;
+}
+.navbar-search-icon{
+    position: relative;
+}
+.navbar-search-icon .dot{
+    position: absolute;
+    min-width: 10px;
+    min-height: 10px;
+    background-color:rgb(217, 172, 57) ;
+    border-radius: 5px;
+    top:-8px;
+    right:-8px;
 }
