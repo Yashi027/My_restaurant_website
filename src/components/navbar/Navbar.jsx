@@ -11,7 +11,7 @@ function Navbar() {
 
   return (
     <div className='navbar'>
-      <img src={asset.logo} alt="" className="logo" />
+      <img src={asset.logo} alt="The Golden Spoon" className="logo" />
       <ul className="navbar-menu">
         <li onClick={()=>setMenu("Home")} className={menu==="Home"?'active':''}>Home</li>
         <li onClick={() => setMenu("Menu")} className={menu==="Menu"?'active':''}>Menu</li>
