@@ -7,7 +7,7 @@ import {assets} from '../../assets/admin_assets/assets'
 
 function Navbar() {
 
-  const [menu, setMenu] = useState("App");
+  const [menu, setMenu] = useState("Home");
 
   return (
     <div className='navbar'>
