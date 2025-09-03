@@ -4,6 +4,7 @@ import Header from '../../components/Header/Header';
 import Exploremenu from '../../components/ExploreMenu/Exploremenu';
 import { useState } from 'react';
 import FoodDisplay from '../../components/foodDisplay/FoodDisplay';
+import AppDownload from '../../components/appDownload/AppDownload';
 
 function Home() {
 
@@ -13,6 +14,7 @@ function Home() {
       <Header/>
       <Exploremenu category={category} setCategory={setCategory}/>
       <FoodDisplay category={category}/>
+      <AppDownload/>
     </div>
   );
 }
