@@ -1,28 +1,28 @@
 import React, { useState } from 'react';
 import './Navbar.css';
-import {asset} from '../../assets/frontend_assets/asset';
-import {assets} from '../../assets/admin_assets/assets'
+import { asset } from '../../assets/frontend_assets/asset';
+import { assets } from '../../assets/admin_assets/assets'
 import { Link } from 'react-router-dom';
 
 
 
-function Navbar({setShowLogin}) {
+function Navbar({ setShowLogin }) {
 
   const [menu, setMenu] = useState("Home");
 
   return (
     <div className='navbar'>
-      <img src={asset.logo} alt="The Golden Spoon" className="logo" />
+      <Link to='/'><img src={asset.logo} alt="The Golden Spoon" className="logo" /></Link>
       <ul className="navbar-menu">
-        <Link onClick={()=>setMenu("Home")} className={menu==="Home"?'active':''}>Home</Link>
-        <a href='#explore-menu' onClick={() => setMenu("Menu")} className={menu==="Menu"?'active':''}>Menu</a>
-        <a href='#app-download' onClick={() => setMenu("App")} className={menu==="App"?'active':''}>App</a>
-        <a href='#footer' onClick={() => setMenu("Contact-us")} className={menu==="Contact-us"?'active':''}>Contact Us</a>
+        <Link to='/' onClick={() => setMenu("Home")} className={menu === "Home" ? 'active' : ''}>Home</Link>
+        <a href='#explore-menu' onClick={() => setMenu("Menu")} className={menu === "Menu" ? 'active' : ''}>Menu</a>
+        <a href='#app-download' onClick={() => setMenu("App")} className={menu === "App" ? 'active' : ''}>App</a>
+        <a href='#footer' onClick={() => setMenu("Contact-us")} className={menu === "Contact-us" ? 'active' : ''}>Contact Us</a>
       </ul>
       <div className="navbar-right">
         <img src={asset.search_icon} alt="Search Icon" />
         <div className="navbar-search-icon">
-          <img src={asset.basket_icon} alt="" />
+          <Link to='/cart'><img src={asset.basket_icon} alt="" /></Link>
           <div className="dot"></div>
         </div>
         <button onClick={() => setShowLogin(true)}>Sign In</button>
