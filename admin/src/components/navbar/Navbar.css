@@ -1,0 +1,19 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 4%;
+
+}
+span{
+    display: flex;
+    align-items: center;
+    font-size: large;
+}
+img{
+    height: 60px;
+    padding: 2px;
+}
+.navbar .profile{
+    height: 40px;
+}
