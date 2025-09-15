@@ -2,6 +2,8 @@ import express from "express"
 import cors from "cors"
 import { connectdb } from "./config/db.js"
 import foodRouter from "./routes/foodRoutes.js"
+import userRouter from "./routes/userRoutes.js"
+import 'dotenv/config'
 
 
 const app = express()
@@ -14,6 +16,7 @@ connectdb();
 
 app.use("/api/food",foodRouter)
 app.use("/images",express.static('uploads'))
+app.use("/api/user",userRouter)
 
 app.get("/", (req,res) => {
     res.send("API working");
@@ -24,4 +27,3 @@ app.listen(port, () => {
     console.log(`Server started on http://localhost:${port}`)
 })
 
-//mongodb+srv://_db_user:<db_password>@cluster0.trhvbj5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
