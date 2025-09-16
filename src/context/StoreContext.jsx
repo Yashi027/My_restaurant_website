@@ -8,6 +8,9 @@ export const StoreContext = createContext(null);
 const StoreContextProvider = (props) => {
 
   const [cartItems, setCartItems] = useState({});
+  const [token,setToken] = useState("");
+  const url = 'http://localhost:4000'
+
   const addtocart = (itemId) => {
     if (!cartItems[itemId]) {
       setCartItems((pre) => ({ ...pre, [itemId]: 1 }))
@@ -46,7 +49,10 @@ const StoreContextProvider = (props) => {
     setCartItems,
     addtocart,
     removeFromCart,
-    getTotalCartamount
+    getTotalCartamount,
+    url,
+    token,
+    setToken
   }
 
 

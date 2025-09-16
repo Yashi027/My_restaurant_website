@@ -6,7 +6,22 @@ import validator from 'validator';
 //login user
 
 const loginUser = async (req, res) => {
-
+     const {email, password} = req.body;
+     try {
+        const user = await User.findOne({email});
+        if(!user){
+           return res.status(409).json({success:false, message: "User not exist"})
+        }
+        const isMatch = await bcrypt.compare(password,user.password)
+        if(!isMatch){
+            return res.status(409).json({success:false, message: "Invalid credentials"});
+        }
+        const token = createToken(user._id)
+        res.status(200).json({success:true, message:"User login successful",token})
+     } catch (e) {
+        console.log(e);
+        res.status(400).json({ success: false, message: "Error in login user" });
+     }
 }
 
 const createToken = (id) => {
