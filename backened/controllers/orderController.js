@@ -68,5 +68,15 @@ const verifyOrder = async (req,res) => {
     }
 }
 
+const userOrders = async(req,res) => {
+    try {
+        const orders = await Order.find({userId:req.userId});
+        res.status(200).json({success:true, message:"Successfully fetched", data: orders})
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({success:false, message:"Error"})
+    }
+}
 
-export { placeOrder , verifyOrder }
+
+export { placeOrder , verifyOrder, userOrders }
