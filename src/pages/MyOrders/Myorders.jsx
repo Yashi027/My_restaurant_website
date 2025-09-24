@@ -35,9 +35,17 @@ function Myorders() {
                             <img src={asset.parcel_icon} alt="Order" />
                             <p>
                                 {order.items.map((item,idx) => {
-
+                                    if(idx == order.items.length-1){
+                                        return item.name + " x " + item.quantity;
+                                    }else{
+                                        return item.name + " x " + item.quantity + " , ";   
+                                    }
                                 })}
                             </p>
+                            <p>${order.amount}.0</p>
+                            <p>Items: {order.items.length}</p>
+                            <p><span>&#x25cf;</span><b>{order.status}</b></p>
+                            <button>Track Order</button>
                         </div>
 
                        )
