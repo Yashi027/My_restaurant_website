@@ -31,6 +31,10 @@
     cursor: pointer;
     color: #454545;
 }
+.my-orders-order button:active{
+  padding: 10px 0px;
+}
+
 @media (max-width:900px){
     .my-orders-order{
         grid-template-columns: 1fr 2fr 1fr;

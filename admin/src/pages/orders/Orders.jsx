@@ -19,6 +19,12 @@ function Orders({url}) {
      }
   }
 
+  const statusHandler = async (e,orderId) => {
+    const response = await axios.post(url+"/api/order/status",{orderId,status: e.target.value})
+    if(response.data.success)
+      fetchAllOrders();
+  }
+
   useEffect(() => {
     fetchAllOrders();
   }, []);
@@ -57,7 +63,7 @@ function Orders({url}) {
                 <p className='order-item-phone'>{order.address.phone}</p>
                 <p>Item: {order.items.length}</p>
                 <p>${order.amount}</p>
-                <select >
+                <select onChange={(e) => statusHandler(e,order._id)} value={order.status}>
                   <option value="Food Processing">Food Processing</option>
                   <option value="Out For Delivery">Out For Delivery</option>
                   <option value="Delivered">Delivered</option>
